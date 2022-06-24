@@ -10,6 +10,5 @@ Submitted 4/2/22 ***EXCEEDS EXPECTATIONS***
 -PROJECT OVERVIEW-
 * In this project I practiced web design skills by customizing a web page to create a personal profile.
 * I modified the code for a basic web page by adding graphics, custom text, and a stylish design.
-* I practiced my newly acquired HTML and CSS skills.
 * I gave myself a web page I can use as a personal online calling card to advertise myself.
-* I practiced using GitHub.
+* I practiced my newly acquired HTML, CSS, and Github skills.
