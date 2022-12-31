@@ -1,5 +1,5 @@
 # Create A Profile Page
-  Team Treehouse - Front End Web Development TechDegree - Project 1
+  Team Treehouse - Web Development TechDegree - Project 1
 
 
 Submitted 4/2/22 ***EXCEEDS EXPECTATIONS***
@@ -7,7 +7,7 @@ Submitted 4/2/22 ***EXCEEDS EXPECTATIONS***
 -SKILLS USED-
 * HTML
 * CSS
-* Github
+* GitHub
 
 -PROJECT OVERVIEW-
 * In this project I practiced web design skills by customizing a web page to create a personal profile.
