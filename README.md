@@ -2,7 +2,7 @@
 Team Treehouse - Web Development TechDegree - Project 1
   - Submitted 4/2/22 ***EXCEEDS EXPECTATIONS***
 
-Team Treehouse - Full Stack JavaScript TechDegree - Project 1
+Team Treehouse - Front End Web Development TechDegree - Project 1
   - Submitted 1/20/23 ***EXCEEDS EXPECTATIONS***
 
 -SKILLS USED-
