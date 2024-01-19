@@ -1,4 +1,11 @@
-/* Global Layout Set-up */
+/* #bbb1b141          : background */
+/* #222               : general text */
+
+/* rgb(183, 34, 133)  : first accent */                     /* SLIGHT ADJUSTMENT MADE TO LIGHTEN THIS COLOR IN .list SELECTOR */
+/* rgb(102, 51, 255)  : second accent */                    /* SLIGHT ADJUSTMENT MADE TO LIGHTEN THIS COLOR IN .list SELECTOR */
+/* rgb(255, 131, 29)  : focus */               
+
+/* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----- 0px */
 * {
   box-sizing: border-box;
 }
@@ -9,20 +16,33 @@ body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: #222;
-  background: #f7f5f0;
+  background: #bbb1b141;
 }
-/* Link Styles */
 
+ /* --- LINKS --- */
 a {
   text-decoration: none;
-  color: #999;
+  color: rgb(183, 34, 133);
+  border: rgba(0, 0, 0, 0) 1px solid;
+  border-radius: 5px;
+  padding: 2px;
+  transition: all .25s;
+}
+a:visited {
+  color: rgb(102, 51, 255);
+}
+a:focus {
+  outline: none;
+  background-color: rgba(255, 131, 29, 0.25);
+  border-color: rgb(255, 131, 29);
+  color: #222; 
 }
 a:hover {
-  color: #6633ff;
+  color: rgb(102, 51, 255);
+  background-color: rgba(183, 34, 133, 0.15);
 }
 
-/* Section Styles */
-
+/* --- NAVIGATION --- */
 nav {
   width: 100%;
   background: black;
@@ -33,6 +53,8 @@ nav {
 }
 .nav {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   font-weight: 700;
   list-style-type: none;
@@ -41,20 +63,29 @@ nav {
 }
 
 .nav .name {
-    display: block;
-    margin-right: auto;
-    color: white;
+  display: block;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.5);
+  width: 100%;
 }
 .nav li {
-  padding: 5px 10px 10px 10px;
+  text-transform: uppercase;
+  margin: 1% 0 2% 0;
+  text-align: center;
 }
 .nav a {
   transition: all .5s;
+  padding: 10%;
+  font-weight: lighter;
 }
 .nav a:hover {
-  color: white
+  background-color: rgba(255, 131, 29, 0.25);
+}
+.nav a:visited {
+  color: white;
 }
 
+/* --- HEADER --- */
 header {
   text-align: center;
   background: url('../images/NYC.jpg') no-repeat top center ;
@@ -68,25 +99,26 @@ header .profile-image {
   margin-top: 50px;
   width: 150px;
   height: 150px;
-  border-radius: 23%;
-  border: 3px dashed red;
+  border-radius: 50%;
+  background-size: cover;
+  overflow: hidden;
+  border: 3px solid #222;
   transition: all .75s;
 }
 header .profile-image:hover {
-  transform: scale(.75) rotate(2deg);
+  transform: scale(.75) rotate(360deg);
 }
 .tag {
-  background-color: #efefef;
-  color: black;
+  background-color: white;
+  color: #222;
   padding: 10px;
+  border: 1px solid #222;
   border-radius: 5px;
-  display: table;
+  max-width: fit-content;
   margin: 10px auto;
 }
-.location {
-  background-color: #222;
-  color: yellow;
-}
+
+/* --- SECTIONS --- */
 section {
   margin: 30px;
   padding: 20px 40px 40px;
@@ -98,98 +130,105 @@ section {
   transition: all .5s;
 }
 section:hover {
-  border-color: #ff99ff;
+  border-color: rgb(183, 34, 133);
+}
+section h2 {
+  text-align: center;
+  border-bottom: rgba(183, 34, 133, 0.3) dashed 2px;
 }
 
-ul.skills {
+ul.list {
   padding: 0;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-
-.skills li {
+.list li {
   border-radius: 6px;
-  display: inline-block;
-  background: #ff9904;
-  color: white;
+  background: rgba(164, 137, 247, 0.25);
+  color: #222;
   padding: 5px 10px;
   margin: 2px;
+  max-width: fit-content;
+  min-width: 40%;
+  list-style: none;
+  transition: all 0.5s;
+}
+.list li:nth-child(3n + 3) {
+  background: rgba(220, 89, 176, 0.25);
+}
+.list li:nth-child(3n + 2) {
+  background: rgba(255, 131, 29, 0.25);
+}
+.list li:hover {
+  background: rgba(164, 137, 247, 0.6);
+}
+.list li:nth-child(3n + 3):hover {
+  background: rgba(220, 89, 176, 0.6);
+}
+.list li:nth-child(3n + 2):hover {
+  background: rgba(255, 131, 29, 0.6);
 }
 
-.skills li:nth-child(odd) {
-  background: #0399ff;
-}
-
+/* --- FOOTER --- */
 footer {
   width: 100%;
   min-height: 30px;
-  padding: 20px 0 40px 20px;
 }
-
 footer .copyright {
   top: -8px;
   font-size: .75em;
 }
-
 footer ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-
 footer ul li {
   display: inline-block;
 }
 
-a.social {
-  display: inline-block;
-  text-indent: -9999px;
-  margin-left: 5px;
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
-  opacity: .4;
-  transition: all .5s;
+/* --- PORTFOLIO PAGE --- */
+.app-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-a.twitter {
-  background-image: url('../images/twitter.svg');
-}
-a.linkedin {
-  background-image: url('../images/linkedin.svg');
-}
-a.github {
-  background-image: url('../images/github.svg');
-}
-a.social:hover {
-  opacity: 1;
-}
-.clearfix {
-  clear: both;
+.app-links a{
+  border: solid 1px #222;
+  box-shadow: 5px 5px rgba(183, 34, 133, 0.75), -5px -5px rgba(164, 137, 247, 0.75);
+  
+  padding: 2%;
 }
 
-/* Styles for larger screens */
+/* --- HOBBIES PAGE --- */
+#reading .list li{
+  min-width: 100%;
+}
+#reading small {
+  font-style: italic;
+  font-size: small;
+}
+
+/* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- --- 720px */
 @media screen and (min-width: 720px) {
-
-  .flex {
-      display: -ms-flexbox;      /* TWEENER - IE 10 */
-      display: flex;
-      max-width: 1200px;
-      -ms-flex-pack: distribute;
-      justify-content: space-around;
-      margin: 0 auto;
+  .nav {
+    max-width: 1200px;
+    padding: 0 30px;
   }
 
   header {
     min-height: 470px;
   }
 
-  .nav {
-    max-width: 1200px;
-    padding: 0 30px;
-  }
-
-
   main {
     padding-top: 20px;
+    display: flex;
+    max-width: 1200px;
+    justify-content: space-around;
+    margin: 0 auto;
   }
 
   main p {
