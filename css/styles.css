@@ -19,6 +19,15 @@ body {
   background: #bbb1b141;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
  /* --- LINKS --- */
 a {
   text-decoration: none;
@@ -60,23 +69,25 @@ nav {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
+  max-width: 1200px;
 }
 
 .nav .name {
   display: block;
-  margin-right: auto;
   color: rgba(255, 255, 255, 0.5);
   width: 100%;
 }
 .nav li {
   text-transform: uppercase;
-  margin: 1% 0 2% 0;
+  margin: 1% 2%;
   text-align: center;
+  min-width: fit-content;
 }
 .nav a {
   transition: all .5s;
-  padding: 10%;
+  padding: 2%;
   font-weight: lighter;
+  margin: 2%;
 }
 .nav a:hover {
   background-color: rgba(255, 131, 29, 0.25);
@@ -122,7 +133,6 @@ header .profile-image:hover {
 section {
   margin: 30px;
   padding: 20px 40px 40px;
-  max-width: 500px;
   text-align: left;
   background: #fff;
   border-bottom: 4px solid #ccc;
@@ -137,6 +147,7 @@ section h2 {
   border-bottom: rgba(183, 34, 133, 0.3) dashed 2px;
 }
 
+/* --- LISTS --- */
 ul.list {
   padding: 0;
   text-align: center;
@@ -175,26 +186,25 @@ ul.list {
 /* --- FOOTER --- */
 footer {
   width: 100%;
+  max-width: 1200px;
   min-height: 30px;
 }
-footer .copyright {
-  top: -8px;
+footer p {
   font-size: .75em;
-}
-footer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-footer ul li {
-  display: inline-block;
 }
 
 /* --- PORTFOLIO PAGE --- */
+#portfolio section {
+  position: relative;
+}
 .app-links {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  left: 15px;
 }
 .app-links a{
   border: solid 1px #222;
@@ -212,33 +222,81 @@ footer ul li {
   font-size: small;
 }
 
-/* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- --- 720px */
-@media screen and (min-width: 720px) {
-  .nav {
-    max-width: 1200px;
-    padding: 0 30px;
+/* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- --- 550px */
+@media screen and (min-width: 550px) {
+  /* --- LISTS --- */
+  .list li{
+    min-width: 20%;
   }
 
-  header {
-    min-height: 470px;
-  }
-
-  main {
-    padding-top: 20px;
+  /* --- FOOTER --- */
+  footer {
     display: flex;
-    max-width: 1200px;
-    justify-content: space-around;
-    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: end;
   }
+  footer a{
+    width: 100%;
+  }
+}
 
+/* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- --- 768px */
+@media screen and (min-width: 768px) {
   main p {
     line-height: 1.6em;
   }
-
-  footer {
-    font-size: 1.3em;
-    max-width: 1200px;
-    margin: 40px auto;
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
+  /* --- NAVIGATION --- */
+  .nav .name {
+    width: fit-content;
+    text-align: left;
+  }
+  .nav {
+    justify-content: space-between;
+    margin: 2% 0;
+  }
+
+  /* --- HEADER --- */
+  header {
+    min-height: 380px;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    margin-top: 5%;
+  }
+  footer a {
+    width: max-content;
+    margin-bottom: 3%;
+  }
+  footer :nth-child(1) {
+    order: 2;
+  }
+  footer :nth-child(2) {
+    order: 1;
+  }
+  footer :nth-child(3) {
+    order: 3;
+  }
+
+  /* --- PORTFOLIO PAGE --- */
+  #portfolio section {
+    width: 40%;
+  }
+  .app-links {
+    max-width: none;
+  }
+
+  /* --- HOBBIES PAGE --- */
+  #reading .list li{
+    width: 45%;
+    min-width: 49%;
+    max-width: 49%;
+  }
 }
