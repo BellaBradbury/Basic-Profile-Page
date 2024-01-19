@@ -17,13 +17,20 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #222;
   background: #bbb1b141;
-}
-
-main {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  max-width: 1200px;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: space-around;
   margin: 0 auto;
 }
@@ -62,14 +69,11 @@ nav {
 }
 .nav {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
   font-weight: 700;
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
-  max-width: 1200px;
 }
 
 .nav .name {
@@ -107,7 +111,7 @@ header {
 }
 
 header .profile-image {
-  margin-top: 50px;
+  margin-top: 90px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -186,8 +190,8 @@ ul.list {
 /* --- FOOTER --- */
 footer {
   width: 100%;
-  max-width: 1200px;
   min-height: 30px;
+  margin: 0 auto;
 }
 footer p {
   font-size: .75em;
@@ -196,6 +200,9 @@ footer p {
 /* --- PORTFOLIO PAGE --- */
 #portfolio section {
   position: relative;
+}
+#portfolio section p {
+  margin-bottom: 5%;
 }
 .app-links {
   display: flex;
@@ -229,6 +236,22 @@ footer p {
     min-width: 20%;
   }
 
+  /* --- NAVIGATION --- */
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .nav .name {
+    width: 25%;
+    text-align: left;
+  }
+
+  /* --- HEADER --- */
+  header .profile-image {
+    margin-top: 20px;
+  }
+
   /* --- FOOTER --- */
   footer {
     display: flex;
@@ -247,24 +270,17 @@ footer p {
   main p {
     line-height: 1.6em;
   }
-  main {
+  .wrapper {
     flex-direction: row;
     flex-wrap: wrap;
-  }
-
-  /* --- NAVIGATION --- */
-  .nav .name {
-    width: fit-content;
-    text-align: left;
-  }
-  .nav {
-    justify-content: space-between;
-    margin: 2% 0;
   }
 
   /* --- HEADER --- */
   header {
     min-height: 380px;
+  }
+  header .profile-image {
+    margin-top: 30px;
   }
 
   /* --- FOOTER --- */
@@ -289,14 +305,40 @@ footer p {
   #portfolio section {
     width: 40%;
   }
-  .app-links {
-    max-width: none;
+
+  /* --- HOBBIES PAGE --- */
+  #reading .list li{
+    min-width: 49%;
+    max-width: 49%;
+  }
+}
+
+/* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- -- 1024px */
+@media screen and (min-width:1024px) {
+  /* --- NAVIGATION --- */
+  .nav .name {
+    width: 50%;
+    text-align: left;
+  }
+
+  /* --- SECTION --- */
+  section {
+    width: 43%;
+  }
+
+  /* --- PORTFOLIO PAGE --- */
+  #portfolio section {
+    width: 25%;
   }
 
   /* --- HOBBIES PAGE --- */
   #reading .list li{
-    width: 45%;
-    min-width: 49%;
-    max-width: 49%;
+    min-width: 100%;
   }
+}
+
+
+/* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- -- 1440px */
+@media screen and (min-width: 1440px) {
+
 }
