@@ -4,7 +4,7 @@ let navBtns = Array.from( document.getElementsByClassName('nav-btn') );
 
 /* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- MOBILE MENU */
 function menuSwitch(status, arrow, vis=null) {
-    navToggle.setAttribute('flag', status);
+    navToggle.setAttribute('data-flag', status);
     navBtns.forEach(btn => { 
         if (vis) { btn.style.display = 'block' } else { btn.style.display = 'none' }
     });
@@ -12,7 +12,7 @@ function menuSwitch(status, arrow, vis=null) {
 }
 
 navToggle.addEventListener('click', (e)=> {
-    let status = e.target.getAttribute('flag');
+    let status = e.target.getAttribute('data-flag');
     if (status === 'up') { menuSwitch('down', '&#9650;', 'vis') } else { menuSwitch('up', '&#9660;') }
 });
 
