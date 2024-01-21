@@ -35,8 +35,9 @@ main {
   margin: 0 auto;
 }
 
- /* --- LINKS --- */
-a {
+ /* --- LINK & BUTTON STATES --- */
+a, button {
+  background: none;
   text-decoration: none;
   color: rgb(183, 34, 133);
   border: rgba(0, 0, 0, 0) 1px solid;
@@ -47,7 +48,7 @@ a {
 a:visited {
   color: rgb(102, 51, 255);
 }
-a:focus {
+a:focus, button:focus {
   outline: none;
   background-color: rgba(255, 131, 29, 0.25);
   border-color: rgb(255, 131, 29);
@@ -66,38 +67,66 @@ nav {
   padding: 10px;
   position: fixed;
   text-align: center;
+  z-index: 999;
 }
 .nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   font-weight: 700;
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
 }
 
-.nav .name {
-  display: block;
-  color: rgba(255, 255, 255, 0.5);
-  width: 100%;
-}
 .nav li {
   text-transform: uppercase;
   margin: 1% 2%;
   text-align: center;
-  min-width: fit-content;
+  width: 80%;
+  white-space: normal;
 }
-.nav a {
+.nav .name {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  width: fit-content;
+}
+.nav button {
+  font-size: large;
+  color: white;
+}
+#nav-menu {
+  width: fit-content;
+  margin-left: auto;
+}
+
+.nav a, .nav button {
   transition: all .5s;
   padding: 2%;
   font-weight: lighter;
   margin: 2%;
 }
-.nav a:hover {
-  background-color: rgba(255, 131, 29, 0.25);
-}
+
 .nav a:visited {
   color: white;
+}
+.nav-active {
+  background-color: rgba(255, 255, 255, 0.35);
+  transition: all 0.25s;
+  border-color: white;
+}
+.nav a:hover, .nav button:hover {
+  background-color: rgba(255, 131, 29, 0.25);
+}
+
+.nav-btn {
+  display: none;
+}
+.nav-btn a {
+  display: block;
+  width: 100%;
 }
 
 /* --- HEADER --- */
@@ -111,11 +140,12 @@ header {
 }
 
 header .profile-image {
-  margin-top: 90px;
+  margin-top: 10px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   background-size: cover;
+  background-color: rgba(255, 255, 255, 0.75);
   overflow: hidden;
   border: 3px solid #222;
   transition: all .75s;
@@ -124,7 +154,7 @@ header .profile-image:hover {
   transform: scale(.75) rotate(360deg);
 }
 .tag {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.75);
   color: #222;
   padding: 10px;
   border: 1px solid #222;
@@ -238,13 +268,24 @@ footer p {
 
   /* --- NAVIGATION --- */
   .nav {
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
   }
+  .nav li {
+    width: max-content;
+  }
   .nav .name {
-    width: 25%;
-    text-align: left;
+    width: 30%;
+  }
+  .nav-btn a {
+    padding: 3%;
+    width: max-content;
+  }
+
+  .nav-btn {
+    display: block;
+  }
+  #nav-menu {
+    display: none;
   }
 
   /* --- HEADER --- */
@@ -261,7 +302,7 @@ footer p {
     align-items: end;
   }
   footer a{
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -335,10 +376,4 @@ footer p {
   #reading .list li{
     min-width: 100%;
   }
-}
-
-
-/* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- -- 1440px */
-@media screen and (min-width: 1440px) {
-
 }
